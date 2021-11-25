@@ -7,9 +7,10 @@ import (
 
 type User struct {
 	gorm.Model
-	UserName string `json:"username"`
-	Password string `json:"password"`
-	Role     string `json:"role"`
+	UserName string
+	Password string
+	Feature  string `gorm:"type:Text"`
+	Role     string
 }
 
 type UpdateUserVM struct {

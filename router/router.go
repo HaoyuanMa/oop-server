@@ -12,7 +12,7 @@ func InitRouter() {
 
 	var router = r.Group("api")
 	{
-		router.POST("user/login", api.Login)
+		router.POST("login", api.Login)
 	}
 
 	_ = r.Run(":5001")
