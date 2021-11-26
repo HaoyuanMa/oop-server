@@ -13,6 +13,13 @@ func InitRouter() {
 	var router = r.Group("api")
 	{
 		router.POST("login", api.Login)
+		router.POST("face_validate", api.FaceValidate)
+		router.POST("Register_Pic_Upload", func(c *gin.Context) {
+			c.String(200, "11")
+		})
+		router.GET("Register_Face_Feature", func(c *gin.Context) {
+			c.String(200, "123456")
+		})
 	}
 
 	_ = r.Run(":5001")
