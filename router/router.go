@@ -12,6 +12,7 @@ func InitRouter() {
 
 	var router = r.Group("api")
 	{
+		router.POST("register", api.Register)
 		router.POST("login", api.Login)
 		router.POST("face_validate", api.FaceValidate)
 		router.POST("Register_Pic_Upload", func(c *gin.Context) {

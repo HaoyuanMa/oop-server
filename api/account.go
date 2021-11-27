@@ -11,6 +11,38 @@ import (
 	"strings"
 )
 
+func Register(c *gin.Context) {
+	//var register protocol.Register
+	//_ = c.ShouldBindJSON(&register)
+	//db := lib.GetDBConn()
+	//var user models.User
+	//notFound := db.Where("user_name=?", register.UserName).First(&user).RecordNotFound()
+	//if notFound {
+	//	err := db.Create(&models.User{
+	//		UserName: register.UserName,
+	//		Password: register.PassWord,
+	//		Feature: register.Feature,
+	//	}).Error
+	//	if err != nil {
+	//		c.JSON(500, gin.H{
+	//			"status":  500,
+	//			"message": "failed",
+	//		})
+	//		return
+	//	}
+	//} else {
+	//	c.JSON(500, gin.H{
+	//		"status":  500,
+	//		"message": "failed",
+	//	})
+	//	return
+	//}
+	c.JSON(200, gin.H{
+		"status":  200,
+		"message": "success",
+	})
+}
+
 func Login(c *gin.Context) {
 	var login protocol.Login
 	_ = c.ShouldBindJSON(&login)
@@ -53,7 +85,7 @@ func FaceValidate(c *gin.Context) {
 	//	"message": "failed",
 	//})
 
-	c.JSON(200, gin.H{
+	c.JSON(403, gin.H{
 		"status":  200,
 		"message": "ok",
 	})
